@@ -1,0 +1,24 @@
+env: prod
+http:
+  host: 0.0.0.0
+  port: 8010
+security:
+  jwt:
+    key: change-me-in-production
+etcd:
+  endpoints:
+    - 127.0.0.1:2379
+data:
+  db:
+    driver: mysql
+    dsn: root:123456@tcp(127.0.0.1:3306)/do_template_app?charset=utf8mb4&parseTime=True&loc=Local
+  redis:
+    addr: redis:6379
+    password: ""
+    db: 0
+    read_timeout: 200ms
+    write_timeout: 200ms
+log:
+  level: info
+  mode: file
+  file: storage/logs/server.log

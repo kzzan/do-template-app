@@ -1,0 +1,11 @@
+env: prod
+http:
+  host: 0.0.0.0
+  port: 8020
+etcd:
+  endpoints:
+    - etcd:2379
+log:
+  level: info
+  mode: file
+  file: storage/logs/gateway.log

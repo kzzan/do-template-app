@@ -1,0 +1,5 @@
+bin/
+storage/*.db
+storage/*.db-*
+storage/logs/
+*.log

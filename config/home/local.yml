@@ -1,0 +1,14 @@
+env: local
+http:
+  host: 127.0.0.1
+  port: 8002
+etcd:
+  endpoints:
+    - 127.0.0.1:2379
+site:
+  title: Home App Skeleton
+  headline: Public-facing shell, ready for real product work.
+log:
+  level: debug
+  mode: console
+  file: storage/logs/home.log

@@ -1,0 +1,28 @@
+env: local
+http:
+  host: 127.0.0.1
+  port: 8010
+security:
+  jwt:
+    key: QQYnRFerJTSEcrfB89fw8prOaObmrch8
+etcd:
+  endpoints:
+    - 127.0.0.1:2379
+data:
+  db:
+    driver: sqlite
+    dsn: storage/do-template-app.db?_pragma=busy_timeout(5000)&_pragma=journal_mode(WAL)
+  #  driver: mysql
+  #  dsn: root:123456@tcp(127.0.0.1:3306)/do_template_app?charset=utf8mb4&parseTime=True&loc=Local
+  #  driver: postgres
+  #  dsn: host=localhost user=do_template password=do_template dbname=do_template_app port=5432 sslmode=disable TimeZone=Asia/Shanghai
+  redis:
+    addr: 127.0.0.1:6379
+    password: ""
+    db: 0
+    read_timeout: 200ms
+    write_timeout: 200ms
+log:
+  level: debug
+  mode: console          # console | file | both
+  file: storage/logs/server.log

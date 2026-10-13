@@ -1,0 +1,11 @@
+env: prod
+http:
+  host: 0.0.0.0
+  port: 8002
+site:
+  title: Home App Skeleton
+  headline: Public-facing shell, ready for real product work.
+log:
+  level: info
+  mode: file
+  file: storage/logs/home.log

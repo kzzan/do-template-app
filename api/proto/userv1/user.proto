@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package userv1;
+
+option go_package = "do-template-app/api/pb/userv1;userv1";
+
+// 用户服务契约：user app 实现，admin/home 经 gRPC 调用
+
+message GetProfileRequest {
+  string user_id = 1;
+}
+
+message Profile {
+  string user_id = 1;
+  string nickname = 2;
+  string email = 3;
+}
+
+message ListUsersRequest {
+  int32 page = 1;
+  int32 page_size = 2;
+}
+
+message UserItem {
+  string user_id = 1;
+  string nickname = 2;
+  string email = 3;
+}
+
+message ListUsersResponse {
+  repeated UserItem list = 1;
+  int64 total = 2;
+}
+
+message CountUsersRequest {}
+
+message CountUsersResponse {
+  int64 total = 1;
+}
+
+service UserService {
+  rpc GetProfile(GetProfileRequest) returns (Profile);
+  rpc ListUsers(ListUsersRequest) returns (ListUsersResponse);
+  rpc CountUsers(CountUsersRequest) returns (CountUsersResponse);
+}

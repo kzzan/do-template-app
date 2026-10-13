@@ -1,0 +1,11 @@
+env: local
+http:
+  host: 127.0.0.1
+  port: 8020
+etcd:
+  endpoints:
+    - 127.0.0.1:2379
+log:
+  level: debug
+  mode: console
+  file: storage/logs/gateway.log

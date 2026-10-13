@@ -1,0 +1,27 @@
+env: prod
+http:
+  host: 0.0.0.0
+  port: 8003
+grpc:
+  host: 0.0.0.0
+  port: 9500
+security:
+  jwt:
+    key: u5rVjw9mXk2LqzT8cYbN4eRfH7aPdGsW  # user 服务独立密钥，与 admin 区隔
+etcd:
+  endpoints:
+    - 127.0.0.1:2379
+data:
+  db:
+    driver: mysql
+    dsn: root:123456@tcp(127.0.0.1:3306)/do_template_user?charset=utf8mb4&parseTime=True&loc=Local
+  redis:
+    addr: redis:6379
+    password: ""
+    db: 0
+    read_timeout: 200ms
+    write_timeout: 200ms
+log:
+  level: info
+  mode: file
+  file: storage/logs/user.log
